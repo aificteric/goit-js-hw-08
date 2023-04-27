@@ -1,0 +1,3 @@
+//! Selecting form and input fields
+const e=document.querySelector(".feedback-form"),t=e.querySelector('input[name="email"]'),a=e.querySelector('textarea[name="message"]'),l=throttle((()=>{const e={email:t.value,message:a.value};localStorage.setItem("feedback-form-state",JSON.stringify(e))}),500);e.addEventListener("input",(()=>{l()})),window.addEventListener("load",(()=>{(()=>{const e=JSON.parse(localStorage.getItem("feedback-form-state"));e&&(t.value=e.email||"",a.value=e.message||"")})()})),e.addEventListener("submit",(e=>{e.preventDefault(),localStorage.removeItem("feedback-form-state"),t.value="",a.value="",console.log({email:"",message:""})}));
+//# sourceMappingURL=03-feedback.eb066371.js.map
