@@ -1,3 +1,6 @@
+//! Importing the Lodash throttle function
+import throttle from 'lodash.throttle';
+
 //! Selecting form and input fields
 const form = document.querySelector('.feedback-form');
 const emailInput = form.querySelector('input[name="email"]');
