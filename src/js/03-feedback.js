@@ -45,6 +45,6 @@ submitButton.addEventListener('click', event => {
     emailInput.value = '';
     messageInput.value = '';
   } else {
-    alert('Please enter your email and message.');
+    alert('Please, enter your email and message.');
   }
 });
