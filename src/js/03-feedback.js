@@ -14,7 +14,7 @@ const saveFormState = throttle(() => {
     email: emailInput.value,
     message: messageInput.value,
   };
-  localStorage.setItem('form-state', JSON.stringify(formState));
+  localStorage.setItem('feedback-form-state', JSON.stringify(formState));
 }, 500);
 
 //* Add an input event listener to the form that calls the saveFormState function
@@ -23,7 +23,7 @@ form.addEventListener('input', saveFormState);
 //* On page load, check if there is saved form state in local storage
 
 window.addEventListener('load', () => {
-  const formState = JSON.parse(localStorage.getItem('form-state'));
+  const formState = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (formState) {
     emailInput.value = formState.email || '';
     messageInput.value = formState.message || '';
@@ -41,7 +41,7 @@ submitButton.addEventListener('click', event => {
       message: messageValue,
     };
     console.log(formState);
-    localStorage.removeItem('form-state');
+    localStorage.removeItem('feedback-form-state');
     emailInput.value = '';
     messageInput.value = '';
   } else {
