@@ -31,9 +31,3 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionType: 'alt',
   captionDelay: 250,
 });
-
-galleryContainer.addEventListener('click', event => {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') return;
-  lightbox.open(event.target);
-});

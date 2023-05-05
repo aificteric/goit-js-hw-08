@@ -10,10 +10,9 @@ const player = new Player(iframe);
 const currentTimeKey = 'videoplayer-current-time';
 
 //* Save the current time to local storage every second using throttle
-const saveCurrentTime = throttle(() => {
-  player.getCurrentTime().then(time => {
-    localStorage.setItem(currentTimeKey, time);
-  });
+const saveCurrentTime = throttle(async () => {
+  const time = await player.getCurrentTime();
+  localStorage.setItem(currentTimeKey, time);
 }, 1000);
 
 //* Restore the video playback from the position
